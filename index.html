@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#131a29" />
+  <meta name="description" content="NEON Store: projeto demonstrativo de e-commerce de tecnologia feito com HTML, CSS e JavaScript." />
+  <title>NEON Store | Tecnologia que inspira</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="announcement"><span>✦ Projeto de portfólio — loja demonstrativa, sem vendas reais</span><span class="announcement-extra">Frete demonstrativo grátis acima de R$ 299 • Cupom <strong>DEV10</strong></span></div>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio" aria-label="NEON Store, voltar ao início"><span class="brand-mark">n<span class="brand-dot">.</span></span><span class="brand-name">neon<span>.</span></span></a>
+      <nav class="desktop-nav" aria-label="Navegação principal"><a href="#produtos">Produtos</a><a href="#diferenciais">Por que a NEON?</a><a href="#sobre">Sobre o projeto</a></nav>
+      <div class="nav-actions">
+        <button id="favoritesButton" class="icon-button wishlist-nav" aria-label="Mostrar meus favoritos" title="Meus favoritos" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg><span id="favoritesCount" class="small-count hidden">0</span></button>
+        <button id="cartButton" class="cart-nav" aria-label="Abrir carrinho de compras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h2l2.1 10.2a2 2 0 0 0 2 1.6h9.2a2 2 0 0 0 2-1.6L22 7H6"/><circle cx="10" cy="20" r="1"/><circle cx="19" cy="20" r="1"/></svg><span>Carrinho</span><span id="cartCount" class="cart-badge">0</span></button>
+      </div>
+    </div>
+  </header>
+  <main id="inicio">
+    <section class="hero container" aria-label="Destaque da loja">
+      <div class="hero-glow"></div><div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="eyebrow hero-eyebrow"><span class="dot-live"></span> PARA QUEM VIVE TECNOLOGIA</div>
+        <h1>Seu setup.<br /><span>Sua melhor versão.</span></h1>
+        <p>Design, conforto e performance em cada detalhe. Descubra acessórios que combinam com seu ritmo.</p>
+        <div class="hero-buttons"><a href="#produtos" class="button button-lime">Explorar coleção <span aria-hidden="true">↗</span></a><a href="#diferenciais" class="hero-link">Conheça a experiência <span aria-hidden="true">→</span></a></div>
+        <div class="hero-social"><div class="avatar-stack" aria-hidden="true"><span>✦</span><span>◆</span><span>●</span></div><span><strong>9 produtos</strong> no catálogo demonstrativo</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div><span class="hero-spark spark-a">✧</span><span class="hero-spark spark-b">+</span><img src="headphones.svg" alt=""/><div class="floating-label"><span class="floating-icon">♫</span><div><strong>Pulse Pro</strong><small>Áudio com personalidade</small></div><span class="floating-arrow">↗</span></div><span class="hero-index">01 / 09</span></div>
+    </section>
+    <section class="benefits container" id="diferenciais" aria-label="Diferenciais do projeto"><div class="benefit"><span class="benefit-icon">✧</span><div><strong>Design pensado para você</strong><small>Produtos que valorizam seu espaço</small></div></div><div class="benefit"><span class="benefit-icon">▣</span><div><strong>Experiência intuitiva</strong><small>Navegação rápida e responsiva</small></div></div><div class="benefit"><span class="benefit-icon">↺</span><div><strong>Compra simulada</strong><small>Explore sem pagar ou se cadastrar</small></div></div></section>
+    <section class="products-section container" id="produtos">
+      <div class="section-top"><div><div class="eyebrow eyebrow-dark">ESCOLHAS COM PROPÓSITO</div><h2>Encontre seu próximo <em>favorito.</em></h2><p>Explore o catálogo, filtre, favorite e adicione ao carrinho.</p></div><span class="catalog-count" id="catalogCount">9 produtos disponíveis</span></div>
+      <div class="catalog-toolbar"><div class="category-list" id="categoryList" aria-label="Filtrar por categoria"></div><div class="toolbar-right"><label class="search-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="searchInput" type="search" placeholder="Buscar produto..." aria-label="Buscar produtos" autocomplete="off"/><kbd>/</kbd></label><label class="sort-wrapper"><span class="sr-only">Ordenar produtos</span><select id="sortSelect"><option value="featured">Destaques</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option><option value="name">Nome A–Z</option></select></label></div></div>
+      <div id="activeFilterNote" class="active-filter-note hidden"></div>
+      <div id="productGrid" class="product-grid" aria-live="polite"></div>
+      <div id="noResults" class="empty-results hidden"><div class="empty-emoji">⌕</div><h3>Nenhum produto encontrado</h3><p>Tente outra busca ou remova os filtros.</p><button id="resetFilters" class="button button-dark">Ver todos os produtos</button></div>
+    </section>
+    <section class="promo container"><div class="promo-content"><div class="eyebrow promo-eyebrow">UMA EXPERIÊNCIA COMPLETA</div><h2>Ideias ganham vida<br/>com <span>bons projetos.</span></h2><p>Uma vitrine para explorar interações reais de front-end: filtros, estados, carrinho e mais.</p><a href="#sobre" class="button button-outline-light">Conheça o projeto <span aria-hidden="true">↗</span></a></div><div class="promo-art" aria-hidden="true"><span class="promo-curly">{</span><div class="code-card"><div class="code-card-top"><span></span><span></span><span></span><small>app.js</small></div><pre><span class="syntax-purple">const</span> experiência = {<br/>  design: <span class="syntax-yellow">'incrível'</span>,<br/>  interações: <span class="syntax-purple">true</span>,<br/>  criatividade: <span class="syntax-green">100</span><br/>};</pre></div><span class="promo-curly">}</span></div></section>
+    <section class="about container" id="sobre"><div><span class="eyebrow eyebrow-dark">POR TRÁS DO PROJETO</span><h2>Um e-commerce feito<br/>para <em>aprender fazendo.</em></h2></div><div class="about-copy"><p>A NEON Store é um <strong>projeto demonstrativo de portfólio</strong>, desenvolvido com HTML, CSS e JavaScript, sem frameworks e sem backend. O objetivo é praticar interfaces dinâmicas e boas experiências de navegação.</p><div class="stack-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>LocalStorage</span><span>Responsividade</span></div><small>Os produtos e valores são fictícios. Nenhuma compra, pagamento ou pedido real é realizado.</small></div></section>
+  </main>
+  <footer><div class="container footer-inner"><a href="#inicio" class="footer-logo">neon<span>.</span></a><div><span>Feito para demonstrar habilidades em desenvolvimento front-end.</span><small>Projeto fictício • Sem vínculo com marcas ou produtos reais.</small></div><a href="#inicio" class="back-top">Voltar ao topo ↑</a></div></footer>
+  <div id="overlay" class="overlay hidden" aria-hidden="true"></div>
+  <aside id="cartDrawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true" tabindex="-1"><div class="drawer-head"><div><span class="eyebrow eyebrow-dark">SEU ESPAÇO</span><h2 id="drawerTitle">Meu carrinho <span id="drawerItemCount">(0)</span></h2></div><button class="close-button" data-close aria-label="Fechar carrinho">×</button></div><div id="cartContents" class="drawer-body"></div><div id="cartFooter" class="drawer-footer"></div></aside>
+  <div id="productModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1"><button class="modal-x close-button" data-close aria-label="Fechar detalhes">×</button><div id="productModalBody"></div></div>
+  <div id="checkoutModal" class="modal checkout-modal hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" tabindex="-1"><button class="modal-x close-button" data-close aria-label="Fechar checkout">×</button><div id="checkoutBody"></div></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
